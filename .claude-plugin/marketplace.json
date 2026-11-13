@@ -6,7 +6,7 @@
       "name": "knowhow-script",
       "source": "./",
       "description": "내 경험을 후킹 멘트 + 노하우텔링 5단계 영상 스크립트 초안으로 만드는 스킬",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ]
 }
