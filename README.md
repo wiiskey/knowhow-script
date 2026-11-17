@@ -17,6 +17,16 @@
 
 이미 쓴 대본을 주면 첫머리에서 이탈하는 지점을 진단하고 고친 안을 냅니다. "이 대본 AI 티 빼줘"라고 하면 윤문만 합니다.
 
+### 브랜드를 파는 노하우텔링 — `brand-knowhow-script` (v1.2.0 추가)
+
+`knowhow-script`가 "내가 해 보니 이랬다"라면, `brand-knowhow-script`는 **"이 브랜드가 이래서 나에게 도움이 됐다"**를 짭니다. 유료 광고·협찬·UGC형 광고 소재용입니다.
+
+1. **노하우 한 줄 + 기여 한 줄** — 시청자가 브랜드 없이도 가져갈 행동 하나, 반전 자리에서 쓸 브랜드의 사실 하나
+2. **두 갈래 오프닝** — 상황으로 여는 **스토리 시작형(S)**과 결과를 첫마디에 던지는 **직접 소구형(H, "안 입는 옷 팔고 겨울 코트 샀어요!")**을 나눠 만들고, 장면은 최대한 같이 씁니다
+3. **쫀쫀한 기여 구조** — 원인 사건 하나 → 남의 말 → 다리 두 칸(들은 말이 생각남 → 망설이며 찾아봄) → 브랜드 실제 화면으로 반전 → 첫 장면이 끝에서 돌아오는 결과
+4. **퍼소나 늘리기** — 같은 소구로 원인 사건만 다른 고객 3~5명
+5. **얼굴 없이 만들 때** — 혼자 폰으로 찍을 수 있는 컷만, 메신저 화면으로 감정 전달
+
 ## 설치
 
 ### Claude Code (명령 두 줄)
@@ -29,10 +39,11 @@
 ```bash
 git clone https://github.com/wiiskey/knowhow-script.git
 cp -r knowhow-script/skills/knowhow-script ~/.claude/skills/
+cp -r knowhow-script/skills/brand-knowhow-script ~/.claude/skills/   # 브랜드용 (선택)
 ```
 
 ### Claude.ai 웹·데스크톱 앱
-1. [Releases](../../releases)에서 `knowhow-script.zip` 다운로드
+1. [Releases](../../releases)에서 `knowhow-script.zip` (브랜드용은 `brand-knowhow-script.zip`) 다운로드
 2. 설정 → 기능(Capabilities) → 스킬 → 스킬 업로드 → zip 선택
 
 ## 사용 예시
@@ -49,8 +60,11 @@ cp -r knowhow-script/skills/knowhow-script ~/.claude/skills/
 ```
 이 대본 AI 티 빼줘: (대본 붙여넣기)
 ```
+```
+브랜드 노하우텔링 써줘. 중고 옷 매입 서비스, 소구는 "보풀 있는 옷도 값을 쳐 준다", 스토리형이랑 직접 소구형 둘 다
+```
 
-결과물은 현재 폴더의 `knowhow-scripts/날짜-소재.md`로 저장됩니다.
+결과물은 현재 폴더의 `knowhow-scripts/날짜-소재.md`(브랜드용은 `brand-scripts/날짜-브랜드-소재.md`)로 저장됩니다.
 
 ## 나만의 스킬로 키우기 (선택)
 
@@ -71,6 +85,12 @@ skills/knowhow-script/
     ├── rules.md                 # 검사 규칙 G1~G8 · 의도 결정표 · 락인 존 · 진단
     ├── humanize.md              # 윤문: 강제 금지 목록 · AI 티 빼기 · 말투 입히기 · 채점
     └── output-template.md       # 결과물 양식
+skills/brand-knowhow-script/
+├── SKILL.md                     # 브랜드 노하우텔링 8단계
+└── references/
+    ├── opening-and-tension.md   # 오프닝 2갈래(S/H) · 쫀쫀한 스토리 규칙 · 얼굴 없이 만들 때
+    ├── rules.md · humanize.md   # knowhow-script와 같은 검사·윤문 기준
+    └── output-template.md       # 결과물 양식 (S판·H판·공용 컷)
 ```
 
 ## 크레딧
